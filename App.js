@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { Bars3CenterLeftIcon, ShoppingCartIcon } from "react-native-heroicons/solid";
 
 export default function App() {
+
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.top}>
+      <View style={styles.container}>
+        <Bars3CenterLeftIcon size={30} color="red" />
+        <TouchableOpacity >
+          <ShoppingCartIcon size={25} color="green" />
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  top: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#EFE3C2',
+
+
   },
-});
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    margin: "30",
+    padding: '2'
+  },
+
+})
+
+
