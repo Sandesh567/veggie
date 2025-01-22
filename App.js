@@ -1,8 +1,9 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 import { Bars3CenterLeftIcon, ShoppingCartIcon } from "react-native-heroicons/solid";
+import { featuredFruits, categories } from './index';
+import Fruit from './components/Fruit';
 
-const categories = ['Oranges', 'Bananas', 'Pineapple', 'Apple', 'Avocado'];
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState('Oranges');
@@ -24,7 +25,9 @@ export default function App() {
           Fruits and Vegetables
         </Text>
         <ScrollView
+          horizontal
           style={styles.scroll}
+          showsHorizontalScrollIndicator={false}
         >
           {
             categories.map((category, index) => {
@@ -46,6 +49,15 @@ export default function App() {
             })
           }
 
+        </ScrollView>
+      </View>
+
+      {/* /*Fruits */}
+      <View>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+          {
+            featuredFruits.map((fruit, index) => <Fruit fruit={fruit} key={index} />)
+          }
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -77,11 +89,11 @@ const styles = StyleSheet.create({
 
   },
   list: {
-    marginRight: 8,
+    marginRight: 22,
 
   },
   listtext: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     flexDirection: 'column'
   },
