@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Bars3CenterLeftIcon, ShoppingCartIcon } from "react-native-heroicons/solid";
 import { featuredFruits, categories } from './index';
 import Fruit from './components/Fruit';
+import Sales from './components/Sales';
 
 
 export default function App() {
@@ -60,6 +61,22 @@ export default function App() {
           }
         </ScrollView>
       </View>
+      {/* Hot sales item */}
+      <View style={{ marginTop: 8, paddingLeft: 5 }}>
+        <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
+          Hot Sales
+        </Text>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={{ overflow: 'visible' }}>
+          {
+            [...featuredFruits].reverse().map((fruit, index) => <Sales fruit={fruit} key={index} />)
+          }
+
+        </ScrollView>
+      </View>
+
     </SafeAreaView>
   );
 }
