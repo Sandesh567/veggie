@@ -20,7 +20,7 @@ export const featuredFruits = [
         stars: 4,
         desc: 'Sweet and juicy',
         shadow: 'orange',
-        image: require('./assets/images/orange.jpg'),
+        image: require('./assets/images/orange.png'),
         color: opacity => `rgba(251, 216, 146, ${opacity})`, // color is a function
     },
     {
@@ -38,7 +38,7 @@ export const featuredFruits = [
         stars: 4,
         desc: 'Sweet and juicy',
         shadow: 'red',
-        image: require('./assets/images/redOrange.jpg'),
+        image: require('./assets/images/redOrange.png'),
         color: opacity => `rgba(255, 163, 120, ${opacity})`
     },
     {
@@ -47,7 +47,7 @@ export const featuredFruits = [
         stars: 4,
         desc: 'Sweet and juicy',
         shadow: 'green',
-        image: require('./assets/images/greenApple.jpg'),
+        image: require('./assets/images/greenApple.png'),
         color: opacity => `rgba(139, 243, 139, ${opacity})`
     },
     {
@@ -56,7 +56,7 @@ export const featuredFruits = [
         stars: 4,
         desc: 'Sweet and juicy',
         shadow: 'purple',
-        image: require('./assets/images/blackGrapes.jpg'),
+        image: require('./assets/images/blackGrapes.png'),
         color: opacity => `rgba(255, 163, 120, ${opacity})`
     },
 ];
