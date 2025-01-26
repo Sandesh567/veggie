@@ -1,9 +1,15 @@
+import { useNavigation } from "@react-navigation/native"
 import { TouchableOpacity, View, Image, Text } from "react-native"
+import Product from "../screens/Product";
 
 function Sales({ fruit }) {
+    const navigation = useNavigation();
     return (
         <View style={{ marginRight: 6 }}>
-            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: -49, zIndex: -20 }}>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('Product', { ...fruit, color: fruit.color(1) })}
+
+                style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: -49, zIndex: -20 }}>
                 <Image
 
                     source={fruit.image}
@@ -31,4 +37,4 @@ function Sales({ fruit }) {
 
 export default Sales
 
-// 18:32
+
