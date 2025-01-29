@@ -4,16 +4,20 @@ import { Bars3CenterLeftIcon, ShoppingCartIcon } from "react-native-heroicons/so
 import { featuredFruits, categories } from '../index';
 import Fruit from '../components/Fruit';
 import Sales from '../components/Sales';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function HomeScreen() {
     const [activeCategory, setActiveCategory] = useState('Oranges');
+    const navigation = useNavigation();
 
     return (
         <SafeAreaView style={styles.top}>
             <View style={styles.container}>
                 <Bars3CenterLeftIcon size={30} color="red" />
-                <TouchableOpacity >
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Cart')}
+                >
                     <ShoppingCartIcon size={25} color="green" />
                 </TouchableOpacity>
             </View>
